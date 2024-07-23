@@ -1,0 +1,33 @@
+{
+    "name": "LARAVEL 10 Development",
+    "dockerComposeFile": "docker-compose.yml",
+    "workspaceFolder": "/workspace",
+    "service": "app",
+    "customizations": {
+        "settings": {
+            "php.validate.executablePath": "/usr/local/bin/php"
+        },
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker",
+                "mikestead.dotenv",
+                "dotenv.dotenv-vscode",
+                "streetsidesoftware.code-spell-checker-french",
+                "amiralizadeh9480.laravel-extra-intellisense",
+                "pgl.laravel-jump-controller",
+                "xdebug.php-pack",
+                "bmewburn.vscode-intelephense-client",
+                "MehediDracula.php-namespace-resolver",
+                "zobo.php-intellisense",
+                "DEVSENSE.composer-php-vscode"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "postStartCommand": "composer install",
+    "mounts": [
+        "type=bind,source=${localEnv:USERPROFILE}/.ssh,target=/root/.ssh,readonly"
+    ]
+}
